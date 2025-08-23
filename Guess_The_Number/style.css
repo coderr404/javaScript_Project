@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.user-input input{
+    width: 10rem;
+}
+
+.result-btn{
+    margin-top: 1rem;
+}
+
+.submit{
+    padding: 0.5rem 1rem;
+    background-color: aquamarine;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.start-game{
+    padding: 0.5rem 1rem;
+    background-color: aquamarine;
+    border-radius: 5px;
+
+}
+
+
+.show-winner{
+    margin-top: 7px;
+}
