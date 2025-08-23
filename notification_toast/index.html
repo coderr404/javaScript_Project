@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="side user-input">
+        <select id="first-choice" name="choice">
+          <option value="option1">Left</option>
+          <option value="option2">Right</option>
+        </select>
+      </div>
+
+      <div class="position user-input">
+        <select id="second-choice" name="choice">
+          <option value="option1">top</option>
+          <option value="option2">bottom</option>
+        </select>
+      </div>
+
+      <div class="drop user-input">
+        <select id="third-choice" name="choice">
+          <option value="option1">Sucess</option>
+          <option value="option2">Warning</option>
+          <option value="option2">Error</option>
+          <option value="option2">Info</option>
+        </select>
+      </div>
+
+      <div class="user-input user-input">
+        <input
+          type="text"
+          placeholder="drop msg here"
+          maxlength="20"
+          value="This is toast msg"
+        />
+      </div>
+      <div class="duration user-input">
+        Duration
+        <input type="range" min="2" max="10" value="3" />
+      </div>
+
+      <button class="show-toast">Show toast</button>
+    </div>
+
+    <div class="toast-container"></div>
+  </body>
+</html>

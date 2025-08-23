@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+#first-choice,
+#second-choice,
+#third-choice {
+  width: 15rem;
+  height: 2rem;
+  font-size: 17px;
+}
+
+button {
+  width: 100%;
+  height: 2rem;
+  background-color: aquamarine;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  font-size: 17px;
+  width: 97%;
+  height: 2rem;
+}
+
+.toast + .toast {
+  margin-top: 5px;
+}
+
+.user-input {
+  margin-bottom: 7px;
+}
+
+.toast {
+  background-color: rgb(255, 255, 255);
+  padding: 0.5em;
+  color: rgb(255, 255, 255);
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.form-left {
+  animation: formLeft 0.1s ease-in;
+}
+
+.to-left {
+  animation: toLeft 0.1s ease-in forwards;
+}
+
+@keyframes formLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes toLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.from-right {
+  animation: formRight 0.1s ease-in;
+}
+.to-right {
+  animation: toRight 0.1s ease-in forwards;
+}
+
+@keyframes formRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes toRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.toast-container {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.right {
+  left: auto;
+  right: 1rem;
+}
+
+.bottom {
+  top: auto;
+  bottom: 1rem;
+}
+
+.toast.sucess::before {
+  content: "✓";
+}
+.toast.warning::before {
+  content: "⚠";
+}
+.toast.error::before {
+  content: " ✕";
+}
+.toast.info::before {
+  content: "ⓘ";
+}
+
+.toast.sucess {
+  background-color: #009600;
+}
+.toast.warning {
+  background-color: #ec6b03;
+}
+.toast.error {
+  background-color: #ff0000;
+}
+.toast.info {
+  background-color: #e47384;
+}
+
+.toast span {
+  cursor: pointer;
+}
