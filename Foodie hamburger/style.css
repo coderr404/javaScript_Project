@@ -1,0 +1,187 @@
+body {
+  background-color: #f6f0eb;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.nav-bar {
+  display: block;
+}
+
+.nav-bar a {
+  text-decoration-line: none;
+  /* color: inherit; */
+  color: #492118;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-bar a + a {
+  margin-left: 70px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.logo img {
+  width: 100%;
+}
+.home-img {
+  display: flex;
+  justify-content: center;
+  padding: 40px 40px;
+}
+.home-img img {
+  width: 100%;
+}
+
+.main-section p {
+  text-align: center;
+  font-size: 24px;
+  margin-top: -10px;
+  color: #492118;
+  font-weight: 400;
+}
+
+.section .img-container {
+  margin: 0 auto;
+}
+.section h2 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #492118;
+}
+
+.section {
+  margin: 10px 20px;
+}
+
+.img-container {
+  max-width: 900px;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.section-container p {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #492118;
+  max-width: 1040px;
+}
+
+.close-icon {
+  position: absolute;
+  font-size: 24px;
+  right: 10px;
+  top: 0px;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger-icon {
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1190px) {
+  .nav-bar a {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .nav-bar a + a {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 1000px) {
+  .nav-bar a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-bar a + a {
+    margin-left: 15px;
+  }
+  .section-container p {
+    font-weight: bold;
+    max-width: 900px;
+  }
+  .header {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 665px) {
+  .header {
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+  }
+  .nav-bar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    background-color: #fffffff2;
+    padding: 10px;
+    display: none;
+  }
+
+  .nav-bar a + a {
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .home-img {
+    margin-top: -22px;
+  }
+
+  .main-section p {
+    font-size: 14px;
+    margin-top: 19px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .close-icon {
+    display: block;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .menu-open .nav-bar {
+    display: flex;
+    /* top: 5px; */
+    border-radius: 8px;
+  }
+
+  .menu-open .hamburger-icon {
+    display: none;
+  }
+}
