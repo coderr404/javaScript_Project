@@ -1,21 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <div class="starting-page">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="starting-page">
         <div class="logo">
-            <img src="img/quiz.png" alt="">
+          <img src="img/quiz.png" alt="" />
         </div>
-        <button class="start-now">Start Now &#62; &#62; &#62;</button>
+        <button class="start-now">Start Now > > ></button>
 
-        <p>Made with  ❤️ by Rahul Mehta</p>
-    </div>
-</body>
+        <p>Made with ❤️ by Rahul Mehta</p>
+      </div>
+    </main>
+
+    <section class="quiz">
+      <div class="quiz-header">
+        <div class="quiz-time">
+          <img src="img/quiz.png" alt="" />
+        </div>
+           <img src="img/Volume.png" alt="">
+      </div>
+      <!-- <span>&#128266; </span> -->
+      <div class="question-type">
+        
+        <div class="question">
+            <p>
+                <!-- Inside which HtML element do we put the javaScript? -->
+            </p>
+        </div>
+        <span class="qs-count">02/25</span>
+      </div>
+      <div class="timer"><h3>00:<span>30</span></h3> </div>
+      <div class="option-container">
+        
+        <div class="option" id="option-1">
+            <span></span>
+           <label class="custom-checkbox">
+                <!-- <span class="true"></span> -->
+                <span class="true-false-1" ></span>
+            </label>
+        </div>
+        <div class="option" id="option-2">
+            <span></span>
+           <label class="custom-checkbox">
+               <!-- <span class="true"></span> -->
+                <span class="true-false-2"></span>
+            </label>
+        </div>
+        <div class="option" id="option-3">
+            <span></span>
+           <label class="custom-checkbox">
+                <!-- <span class="true"></span> -->
+                <span class="true-false-3"></span>
+            </label>
+        </div>
+        <div class="option" id="option-4">
+            <span></span>
+           <label class="custom-checkbox">
+                <span class="true-false-4"></span>
+                <!-- <span class="false"></span> -->
+            </label>
+        </div>
+        
+      </div>
+      <span class="next">Next &#10148;</span>
+    </section>
+  </body>
 </html>
