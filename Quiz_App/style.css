@@ -248,3 +248,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.result {
+    margin-top: 53px;
+}

@@ -14,6 +14,9 @@ const popup = document.querySelector('.popup')
 const volume = document.querySelector('.volume')
 const audio_1 = document.querySelector('.audio-1')
 const audio_2 = document.querySelector('.audio-2')
+const madeBy = document.querySelector('.made')
+const startinPage = document.querySelector('.starting-page')
+
 
 const option_1 = document.querySelector("#option-1 span");
 const option_2 = document.querySelector("#option-2 span");
@@ -30,6 +33,7 @@ const trueOrFalse_4 = document.querySelector(".true-false-4");
 let result = 0
 let num = 0
 let intervalId
+let correct = 0
 
 
   const question = [
@@ -43,9 +47,7 @@ let intervalId
   'Which of the following is NOT a JavaScript data type?',
   ` Which device is used to connect multiple computers in a network?`,
   ` Which protocol is used to send emails?`,
-  ` What does IP stand for?`,
-  ` Which device is used to connect different networks?`,
-  ` Which protocol is used to securely browse websites (with https)?`,
+  
 ];
 
 const answer = ["script", "Charles Babbage","Delhi","<a>","//","font-size","javaScript","Character","Switch",
@@ -116,35 +118,17 @@ const options = {
     3: "FTP",
     4: "POP3",
   },
-  10: {
-    1: "Internet Provider",
-    2: "Internal Protocol",
-    3: "Internet Protocol",
-    4: "Intranet Process",
-  },
-  11: {
-    1: "Switch",
-    2: "Hub",
-    3: "Router",
-    4: "Repeater",
-  },
-  12: {
-    1: "HTTP",
-    2: "SSL",
-    3: "HTTPS",
-    4: "FTP",
-  },
+ 
 };
 
-questionElement.innerText = `Q)${num + 1}. ${question[num]}`;
+function questionOption(num) {
+  questionElement.innerText = `Q)${num + 1}. ${question[num]}`;
+  option_1.innerText = `${options[num][1]}`;
+  option_2.innerText = `${options[num][2]}`;
+  option_3.innerText = `${options[num][3]}`;
+  option_4.innerText = `${options[num][4]}`;
+}
 
-option_1.innerText = `${options[num][1]}`;
-option_2.innerText = `${options[num][2]}`;
-option_3.innerText = `${options[num][3]}`;
-option_4.innerText = `${options[num][4]}`;
-
-
-function questionOption(num){
 
   
   optionPage.forEach((option) => {
@@ -157,6 +141,7 @@ function questionOption(num){
         
         trueOrFalse_1.classList.add("true");
         music()
+        correct++
         clearInterval(intervalId)
         optionPage.forEach((optio) => {
           optio.classList.add("cursor");
@@ -166,6 +151,7 @@ function questionOption(num){
       } else if (option.innerText == options[num][2]) {
         trueOrFalse_2.classList.add("true");
         music()
+        correct++
         clearInterval(intervalId)
         optionPage.forEach((optio) => {
           optio.classList.add("cursor");
@@ -175,6 +161,7 @@ function questionOption(num){
         clearInterval(intervalId)
         trueOrFalse_3.classList.add("true");
         music()
+        correct++
         optionPage.forEach((optio) => {
           optio.classList.add("cursor");
         });
@@ -182,6 +169,7 @@ function questionOption(num){
       } else if (option.innerText == options[num][4]) {
         trueOrFalse_4.classList.add("true");
         music()
+        correct++
         clearInterval(intervalId)
         optionPage.forEach((optio) => {
           optio.classList.add("cursor");
@@ -226,7 +214,7 @@ function questionOption(num){
   });
 });
 
-}
+// }
 
 
 function timer() {
@@ -284,6 +272,9 @@ function music_2(){
 
 startBtn.addEventListener("click", () => {
 // debugger
+
+  mainPage.style.display = "none";
+  quizPage.style.display = "block";
   next.classList.remove("cursor");
   optionPage.forEach((optio) => {
           optio.classList.remove("cursor");
@@ -297,8 +288,6 @@ startBtn.addEventListener("click", () => {
   });
 
 
-  mainPage.style.display = "none";
-  quizPage.style.display = "block";
 
   timer()
   
@@ -307,9 +296,9 @@ startBtn.addEventListener("click", () => {
 
 if(num < 10)
   {
-    questionCount.innerText = `0${num + 1}/25`
+    questionCount.innerText = `0${num + 1}/10`
   }else{
-    questionCount.innerText = `${num+ 1}/25`
+    questionCount.innerText = `${num+ 1}/10`
   }
 next.addEventListener('click', () => {
   clearInterval(intervalId)
@@ -317,7 +306,7 @@ next.addEventListener('click', () => {
     num++
   if(num < question.length)
   {
-    questionCount.innerText = `${num+ 1}/25`
+    questionCount.innerText = `${num+ 1}/10`
   }
   [trueOrFalse_1, trueOrFalse_2, trueOrFalse_3, trueOrFalse_4].forEach((el) => {
     el.classList.remove('true');
@@ -351,4 +340,17 @@ next.addEventListener('click', () => {
 })
 
   questionOption(num)
+
+submit.addEventListener('click', () => {
+  // debugger
+  clearInterval(intervalId)
+  mainPage.style.display = "block";
+  quizPage.style.display = "none";
+  const h3 = document.createElement('h3')
+  h3.classList.add('result')
+  h3.innerText = `Result : ${correct}/10`
+
+  startinPage.insertBefore(h3, madeBy);
+
+})
 
