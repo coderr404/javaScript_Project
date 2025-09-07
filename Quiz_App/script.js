@@ -273,6 +273,19 @@ function music_2(){
 startBtn.addEventListener("click", () => {
 // debugger
 
+num = 0
+correct = 0
+
+// submit.classList.add('none')
+next.classList.remove("none");      // Next button show karein
+  submit.classList.remove("block");
+
+
+const oldResult = document.querySelector('.result');
+  if (oldResult) {
+    oldResult.remove();
+  }
+
   mainPage.style.display = "none";
   quizPage.style.display = "block";
   next.classList.remove("cursor");
@@ -281,13 +294,18 @@ startBtn.addEventListener("click", () => {
           
         });
 
+        [trueOrFalse_1, trueOrFalse_2, trueOrFalse_3, trueOrFalse_4].forEach(el => {
+    el.classList.remove("true");
+    el.classList.remove("false");
+  });
 
         optionPage.forEach(optio => {
     optio.classList.remove('cursor');
     optio.style.border =  ``;
   });
 
-
+  questionOption(num)
+  questionCount.innerText = `0${num + 1}/10`;
 
   timer()
   
@@ -300,6 +318,8 @@ if(num < 10)
   }else{
     questionCount.innerText = `${num+ 1}/10`
   }
+
+
 next.addEventListener('click', () => {
   clearInterval(intervalId)
   timer()
@@ -343,6 +363,7 @@ next.addEventListener('click', () => {
 
 submit.addEventListener('click', () => {
   // debugger
+  num = 0
   clearInterval(intervalId)
   mainPage.style.display = "block";
   quizPage.style.display = "none";
